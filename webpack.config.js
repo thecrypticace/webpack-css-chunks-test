@@ -69,7 +69,7 @@ module.exports = {
           // enforce: false
           // results in no vue-styles chunk
           // Only a bundle.css file
-          enforce: true
+          enforce: false
         },
 
         extractOtherStyles: {
@@ -82,7 +82,7 @@ module.exports = {
           // Only a bundle.css file
           name: "other-styles",
           chunks: "all",
-          enforce: true
+          enforce: false
         }
       }
     }
