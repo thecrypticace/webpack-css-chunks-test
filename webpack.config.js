@@ -1,7 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const { VueLoaderPlugin } = require("vue-loader");
-const { RemoveStyleScriptChunksPlugin } = require("./build");
+const { TrimCSSPlugin, RemoveStyleScriptChunksPlugin } = require("./build");
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
@@ -57,6 +57,7 @@ module.exports = {
     }),
 
     new RemoveStyleScriptChunksPlugin()
+    // new TrimCSSPlugin(),
   ],
 
   optimization: {
