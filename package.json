@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "node ./node_modules/.bin/webpack --progress --display verbose"
+    "test": "node ./node_modules/.bin/webpack --progress --display verbose",
+    "debug": "node --inspect-brk ./node_modules/.bin/webpack --progress --display verbose"
   },
   "dependencies": {
     "css-loader": "^0.28.11",

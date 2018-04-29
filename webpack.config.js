@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const { VueLoaderPlugin } = require("vue-loader");
+const { RemoveStyleScriptChunksPlugin } = require("./build");
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
@@ -54,6 +55,8 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[name].css"
     }),
+
+    new RemoveStyleScriptChunksPlugin()
   ],
 
   optimization: {
@@ -69,7 +72,7 @@ module.exports = {
           // enforce: false
           // results in no vue-styles chunk
           // Only a bundle.css file
-          enforce: false
+          enforce: true
         },
 
         extractOtherStyles: {
@@ -82,7 +85,7 @@ module.exports = {
           // Only a bundle.css file
           name: "other-styles",
           chunks: "all",
-          enforce: false
+          enforce: true
         }
       }
     }
