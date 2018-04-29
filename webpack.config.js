@@ -53,7 +53,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[name].css"
-    })
+    }),
   ],
 
   optimization: {
